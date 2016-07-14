@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<remote name="cm" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
+<remote name="aokp" revision="refs/heads/mm" fetch=".." review="gerrit.aokp.co" />
+
+<!-- Remove projects -->
+<remove-project name="android_hardware_intel_common_libmix" />
+<project path="hardware/intel/common/libmix" name="CyanogenMod/android_hardware_intel_common_libmix" remote="cm" />
+<remove-project name="android_hardware_intel_common_libva" />
+<project path="hardware/intel/common/libva" name="CyanogenMod/android_hardware_intel_common_libva" remote="cm" />
+<remove-project name="android_hardware_intel_common_libwsbm" />
+<project path="hardware/intel/common/libwsbm" name="CyanogenMod/android_hardware_intel_common_libwsbm" remote="cm" />
+<remove-project name="android_hardware_intel_common_omx-components" />
+<project path="hardware/intel/common/omx-components" name="CyanogenMod/android_hardware_intel_common_omx-components" remote="cm" />
+<remove-project name="android_hardware_intel_img_hwcomposer" />
+<project path="hardware/intel/img/hwcomposer" name="CyanogenMod/android_hardware_intel_img_hwcomposer" remote="cm" />
+<remove-project name="android_hardware_intel_img_psb_headers" />
+<project path="hardware/intel/img/psb_headers" name="CyanogenMod/android_hardware_intel_img_psb_headers" remote="cm" />
+<remove-project name="android_hardware_intel_img_psb_video" />
+<project path="hardware/intel/img/psb_video" name="CyanogenMod/android_hardware_intel_img_psb_video" remote="cm" />
+<remove-project name="android_hardware_qcom_audio" />
+<project name="CyanogenMod/android_hardware_qcom_audio" path="hardware/qcom/audio/default" remote="cm" />
+<remove-project name="android_hardware_qcom_camera" />
+<project name="CyanogenMod/android_hardware_qcom_camera" path="hardware/qcom/camera" remote="cm" />
+<remove-project name="android_hardware_qcom_display" />
+<project name="CyanogenMod/android_hardware_qcom_display" path="hardware/qcom/display" remote="cm" />
+<remove-project name="android_hardware_qcom_gps" />
+<project name="CyanogenMod/android_hardware_qcom_gps" path="hardware/qcom/gps" remote="cm" />
+<remove-project name="android_hardware_qcom_media" />
+<project name="CyanogenMod/android_hardware_qcom_media" path="hardware/qcom/media/default" remote="cm" />
+<remove-project name="platform/external/tinyalsa" />
+<project path="external/tinyalsa" remote="cm" name="CyanogenMod/android_external_tinyalsa" groups="pdk" />
+<remove-project name="android_frameworks_av" />
+<project path="frameworks/av" name="AOKP/frameworks_av" groups="pdk" remote="aokp" />
+<remove-project name="platform/packages/apps/MusicFX" />
+
+<!-- Added projects -->
+<project path="external/stagefright-plugins" remote="cm" name="CyanogenMod/android_external_stagefright-plugins" />
+<project path="external/ffmpeg" remote="cm" name="CyanogenMod/android_external_ffmpeg" />
+<project path="packages/apps/Browser" remote="cm" name="CyanogenMod/android_packages_apps_Browser" groups="pdk-fs" />
+<project path="packages/apps/Snap" name="CyanogenMod/android_packages_apps_Snap" remote="cm" />
+
+<project name="CyanogenMod/android_external_libncurses" path="external/libncurses" remote="cm" />
+<project path="external/stlport" name="CyanogenMod/android_external_stlport" remote="cm" />
+<project path="kernel/asus/moorefield" name="CyanogenMod/android_kernel_asus_moorefield" remote="cm" />
+<project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" remote="cm" />
+<project path="device/asus/Z00A" name="CyanogenMod/android_device_asus_Z00A" remote="cm" />
+<project path="device/asus/Z008" name="CyanogenMod/android_device_asus_Z008" remote="cm" />
+<project path="device/asus/mofd-common" name="CyanogenMod/android_device_asus_mofd-common" remote="cm" />
+
+</manifest>
