@@ -32,8 +32,6 @@
 <project name="CyanogenMod/android_hardware_qcom_media" path="hardware/qcom/media/default" remote="cm" />
 <remove-project name="platform/external/tinyalsa" />
 <project path="external/tinyalsa" remote="cm" name="CyanogenMod/android_external_tinyalsa" groups="pdk" />
-<remove-project name="android_frameworks_av" />
-<project path="frameworks/av" name="AOKP/frameworks_av" groups="pdk" remote="aokp" />
 <remove-project name="platform/packages/apps/MusicFX" />
 
 <!-- Added projects -->
