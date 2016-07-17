@@ -2,6 +2,8 @@
 <manifest>
 <remote name="cm" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
 <remote name="aokp" revision="refs/heads/mm" fetch=".." review="gerrit.aokp.co" />
+<remote name="vilinfield" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
+<remote name="vilinfieldb" fetch="https://github.com/" revision="refs/heads/m-caf" />
 
 <!-- Remove projects -->
 <remove-project name="android_hardware_intel_common_libmix" />
@@ -35,17 +37,24 @@
 <remove-project name="platform/packages/apps/MusicFX" />
 
 <!-- Added projects -->
-<project path="external/stagefright-plugins" remote="cm" name="CyanogenMod/android_external_stagefright-plugins" />
-<project path="external/ffmpeg" remote="cm" name="CyanogenMod/android_external_ffmpeg" />
 <project path="packages/apps/Browser" remote="cm" name="CyanogenMod/android_packages_apps_Browser" groups="pdk-fs" />
 <project path="packages/apps/Snap" name="CyanogenMod/android_packages_apps_Snap" remote="cm" />
-
 <project name="CyanogenMod/android_external_libncurses" path="external/libncurses" remote="cm" />
 <project path="external/stlport" name="CyanogenMod/android_external_stlport" remote="cm" />
 <project path="kernel/asus/moorefield" name="CyanogenMod/android_kernel_asus_moorefield" remote="cm" />
 <project path="vendor/asus" name="TheMuppets/proprietary_vendor_asus" remote="cm" />
-<project path="device/asus/Z00A" name="CyanogenMod/android_device_asus_Z00A" remote="cm" />
-<project path="device/asus/Z008" name="CyanogenMod/android_device_asus_Z008" remote="cm" />
-<project path="device/asus/mofd-common" name="CyanogenMod/android_device_asus_mofd-common" remote="cm" />
+
+<!-- My Repos -->
+<project path="device/asus/Z00A" name="vilinfield/android_device_asus_Z00A" remote="vilinfield" />
+<project path="device/asus/Z008" name="vilinfield/android_device_asus_Z008" remote="vilinfield" />
+<project path="device/asus/mofd-common" name="vilinfield/android_device_asus_mofd-common" remote="vilinfield" />
+
+<!-- ffmpeg fix -->
+<remove-project name="android_frameworks_av" />
+<remove-project name="android_system_media" />
+<project name="vilinfield/android_frameworks_av_du" path="frameworks/av" remote="vilinfieldb" />
+<project name="vilinfield/android_system_media_du" path="system/media" remote="vilinfieldb" />
+<project path="external/stagefright-plugins" remote="cm" name="CyanogenMod/android_external_stagefright-plugins" />
+<project path="external/ffmpeg" remote="cm" name="CyanogenMod/android_external_ffmpeg" />
 
 </manifest>
