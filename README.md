@@ -38,6 +38,17 @@ $ git config --global user.email "you@example.com"
 ```
 -- Get the source initialized:
 $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
+```
+
+Install local manifests
+
+Put these files under the du/.repo/local_manifests directory
+
+https://github.com/vilinfield/rom-building/blob/master/local_manifest.xml
+
+https://github.com/vilinfield/rom-building/blob/master/roomservice.xml
+
+```
 -- Download the source (This can take a while depending on internet speed):
 $ repo sync -j4
 ```
