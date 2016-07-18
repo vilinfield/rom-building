@@ -42,7 +42,7 @@ $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
 $ cd .repo/local_manifests/
 $ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/local_manifest.xml 
 $ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/roomservice.xml 
-cd ../..
+$ cd ../..
 -- Download the source (This can take a while depending on internet speed):
 $ repo sync -j4
 ```
@@ -52,10 +52,10 @@ $ repo sync -j4
 ```
 -- Add ffmpeg support:
 $ nano vendor/du/config/common.mk
-- Add the contents of http://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0 to the right location of the file.
+- Add the contents of http://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0 to the proper location of the file.
 -- Fix a build error:
 $ nano frameworks/base/tools/aapt/Images.cpp
-- add the contents of https://github.com/vilinfield/android_frameworks_base/commit/098f8ff0e7f2007fe34b87739211a9ee0d472ee4 to the proper location of the file.
+- Add the contents of https://github.com/vilinfield/android_frameworks_base/commit/098f8ff0e7f2007fe34b87739211a9ee0d472ee4 to the proper location of the file.
 ```
 
 ### Step Five: Build setup
@@ -63,7 +63,7 @@ $ nano frameworks/base/tools/aapt/Images.cpp
 ```
 -- Setup ccache:
 $ nano ~/.bashrc
-- Append export USE_CCACHE=1 to the end of this file.
+- Append 'export USE_CCACHE=1' without quotes to the end of this file.
 $ prebuilts/misc/linux-x86/ccache/ccache -M 50G 
 ```
 
