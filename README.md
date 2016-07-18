@@ -14,7 +14,7 @@ $ sudo apt-get upgrade
 $ sudo apt-get install openjdk-7-jdk
 $ sudo apt-get install openjdk-7-jre
 -- Install build tools:
-$ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip
+$ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 lzop maven pngcrush schedtool lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev squashfs-tools 
 ```
 
 ### Step Two: Configure Repo and Git  
@@ -63,11 +63,11 @@ In the config/common.mk file this is what has to change
 https://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0
 ```
 
-Update the file frameworks/base/tools/aapt/Image.cpp
+Update the file
 
 ```
--- Change line that says FILE* fp; to:
-dFILE* volatile fp;﻿
+$ nano frameworks/base/tools/aapt/Image.cpp
+- Change the line that says FILE* fp; to FILE* volatile fp;﻿
 ```
 
 ### Step Five: Build it! 
