@@ -63,14 +63,14 @@ In the config/common.mk file this is what has to change
 https://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0
 ```
 
-Update the file
+Update this file to fix a build error
 
 ```
-$ nano frameworks/base/tools/aapt/Image.cpp
+$ nano frameworks/base/tools/aapt/Images.cpp
 - Change the line that says FILE* fp; to FILE* volatile fp;﻿
 ```
 
-### Step Five: Build it! 
+### Step Five: Build it
 
 ```
 -- Setup ccache:
