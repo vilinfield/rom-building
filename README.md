@@ -39,8 +39,10 @@ $ git config --global user.email "you@example.com"
 -- Get the source initialized:
 $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
 -- Download the local manifests:
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/local_manifest.xml .repo/local_manifests
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/roomservice.xml .repo/local_manifests
+$ cd .repo/local_manifests/
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/local_manifest.xml 
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/roomservice.xml 
+cd ../..
 -- Download the source (This can take a while depending on internet speed):
 $ repo sync -j4
 ```
@@ -53,7 +55,7 @@ $ nano vendor/du/config/common.mk
 - Add the contents of http://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0 to the right location of the file.
 -- Fix a build error:
 $ nano frameworks/base/tools/aapt/Images.cpp
-- Change the line that says FILE* fp; to FILE* volatile fp;﻿
+- add the contents of https://github.com/vilinfield/android_frameworks_base/commit/098f8ff0e7f2007fe34b87739211a9ee0d472ee4 to the proper location of the file.
 ```
 
 ### Step Five: Build setup
