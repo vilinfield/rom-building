@@ -38,39 +38,25 @@ $ git config --global user.email "you@example.com"
 ```
 -- Get the source initialized:
 $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
-```
-
-Install local manifests
-
-Put these files under the du/.repo/local_manifests directory
-
-https://github.com/vilinfield/rom-building/blob/master/local_manifest.xml
-
-https://github.com/vilinfield/rom-building/blob/master/roomservice.xml
-
-```
+-- Download the local manifests:
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/local_manifest.xml .repo/local_manifests
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/roomservice.xml .repo/local_manifests
 -- Download the source (This can take a while depending on internet speed):
 $ repo sync -j4
 ```
 
 ### Step Four: Configure source
 
-Cherry pick this commit to vendor/du/
-
-In the config/common.mk file this is what has to change
-
 ```
-https://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0
-```
-
-Update this file to fix a build error
-
-```
+-- Add ffmpeg support:
+$ nano vendor/du/config/common.mk
+- Add the contents of http://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0 to the right location of the file.
+-- Fix a build error:
 $ nano frameworks/base/tools/aapt/Images.cpp
 - Change the line that says FILE* fp; to FILE* volatile fp;﻿
 ```
 
-### Step Five: Build it
+### Step Five: Build setup
 
 ```
 -- Setup ccache:
@@ -79,16 +65,17 @@ $ nano ~/.bashrc
 $ prebuilts/misc/linux-x86/ccache/ccache -M 50G 
 ```
 
+### Step Six: Build
+
 ```
--- Load tools to build:
+-- Load tools:
 $ . build/envsetup.sh
 -- Build for your device:
 $ brunch Z00A
 ```
 
 ```
--- Between builds
+-- Between builds:
 $ make clobber
-$ make clean
-- make clean is optinal
+$ . build/envsetup.sh
 ```
