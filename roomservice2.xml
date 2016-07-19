@@ -14,6 +14,7 @@
 <remove-project name="android_hardware_qcom_media" />
 <project name="CyanogenMod/android_hardware_qcom_media" path="hardware/qcom/media/default" remote="cm" />
 <project path="external/tinyalsa" remote="cm" name="CyanogenMod/android_external_tinyalsa" groups="pdk" />
+<remove-project name="platform/packages/apps/MusicFX" />
 
 <!-- Added projects -->
 <project path="packages/apps/Browser" remote="cm" name="CyanogenMod/android_packages_apps_Browser" groups="pdk-fs" />
