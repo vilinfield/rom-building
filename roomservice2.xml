@@ -3,6 +3,7 @@
 <remote name="cm" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfield" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfieldb" fetch="https://github.com/" revision="refs/heads/m-caf" />
+<remote name="vilinfieldc" fetch="https://github.com/" revision="refs/heads/m-pa" />
 
 <!-- Remove projects -->
 <remove-project name="android_hardware_qcom_audio" />
@@ -31,9 +32,9 @@
 <project path="hardware/intel/img/psb_video" name="CyanogenMod/android_hardware_intel_img_psb_video" remote="cm" />
 
 <!-- My Repos -->
-<project path="device/asus/Z00A" name="vilinfield/android_device_asus_Z00A" remote="vilinfield" />
-<project path="device/asus/Z008" name="vilinfield/android_device_asus_Z008" remote="vilinfield" />
-<project path="device/asus/mofd-common" name="vilinfield/android_device_asus_mofd-common" remote="vilinfield" />
+<project path="device/asus/Z00A" name="vilinfield/android_device_asus_Z00A" remote="vilinfieldc" />
+<project path="device/asus/Z008" name="vilinfield/android_device_asus_Z008" remote="vilinfieldc" />
+<project path="device/asus/mofd-common" name="vilinfield/android_device_asus_mofd-common" remote="vilinfieldc" />
 <project path="packages/apps/Snap" name="vilinfield/android_packages_apps_Snap" remote="vilinfield" />
 
 <!-- ffmpeg fix -->
