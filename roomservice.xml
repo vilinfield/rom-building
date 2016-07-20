@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+
+<!-- Remotes -->
 <remote name="cm" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
-<remote name="aokp" revision="refs/heads/mm" fetch=".." review="gerrit.aokp.co" />
 <remote name="vilinfield" fetch="https://github.com/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfieldb" fetch="https://github.com/" revision="refs/heads/m-caf" />
 
@@ -33,6 +34,8 @@
 <remove-project name="platform/external/tinyalsa" />
 <project path="external/tinyalsa" remote="cm" name="CyanogenMod/android_external_tinyalsa" groups="pdk" />
 <remove-project name="platform/packages/apps/MusicFX" />
+<remove-project name="android_hardware_ril" />
+<project path="hardware/ril" remote="cm" name="CyanogenMod/android_hardware_ril" />
 
 <!-- Added projects -->
 <project path="packages/apps/Browser" remote="cm" name="CyanogenMod/android_packages_apps_Browser" groups="pdk-fs" />
@@ -47,7 +50,7 @@
 <project path="device/asus/mofd-common" name="vilinfield/android_device_asus_mofd-common" remote="vilinfield" />
 <project path="packages/apps/Snap" name="vilinfield/android_packages_apps_Snap" remote="vilinfield" />
 
-<!-- ffmpeg fix -->
+<!-- Ffmpeg -->
 <remove-project name="android_frameworks_av" />
 <remove-project name="android_system_media" />
 <project name="vilinfield/android_frameworks_av_du" path="frameworks/av" remote="vilinfieldb" />
