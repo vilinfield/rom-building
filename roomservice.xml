@@ -41,10 +41,6 @@
 <project name="vilinfield/android_system_media_du" path="system/media" remote="vilinfieldcaf" />
 <remove-project name="platform/packages/apps/MusicFX" />
 
-<!-- Testing -->
-<project name="CyanogenMod/android_packages_apps_AudioFX" path="packages/apps/AudioFX" remote="cm" />
-<project name="CyanogenMod/android_packages_apps_Eleven" path="packages/apps/Eleven" remote="cm" />
-
 <!-- Added projects -->
 <project path="packages/apps/Browser" remote="cm" name="CyanogenMod/android_packages_apps_Browser" groups="pdk-fs" />
 <project name="CyanogenMod/android_external_libncurses" path="external/libncurses" remote="cm" />
