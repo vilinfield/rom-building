@@ -72,6 +72,19 @@ $ nano frameworks/base/tools/aapt/Images.cpp
 - On line 1141 change FILE* fp; to: 
 
 FILE* volatile fp;
+
+-- Fix snap camera build error
+$ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
+
+- Delete lines 1825-1831 shown below
+
+        if (mPowerShutter && mInCameraApp) {
+             getWindow().addPrivateFlags(
+                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+         } else {
+             getWindow().clearPrivateFlags(
+                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+         }
 ```
 
 ### Step Five: Build setup
