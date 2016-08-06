@@ -45,7 +45,7 @@
 <project path="packages/apps/Browser" remote="cm" name="CyanogenMod/android_packages_apps_Browser" groups="pdk-fs" />
 <project name="CyanogenMod/android_external_libncurses" path="external/libncurses" remote="cm" />
 <project path="external/stlport" name="CyanogenMod/android_external_stlport" remote="cm" />
-<project path="packages/apps/Snap" name="vilinfield/android_packages_apps_Snap" remote="vilinfield" />
+<project path="packages/apps/Snap" name="CyanogenMod/android_packages_apps_Snap" remote="cm" />
 <project path="external/stagefright-plugins" remote="cm" name="CyanogenMod/android_external_stagefright-plugins" />
 <project path="external/ffmpeg" remote="cm" name="CyanogenMod/android_external_ffmpeg" />
 
