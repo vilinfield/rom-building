@@ -1,8 +1,8 @@
-# Build Dirty Unicorns for the Asus Zenfone 2 (Z00A + Z008)
+# Build the Dirty Unicorns ROM for the Asus Zenfone 2 (Z00A + Z008)
 
 ## Notes
 
--- This guide is assuming you are running a Debian/Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
+-- This guide is assuming you are running a Debian or Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
 
 ### Step 1: Set up your environment 
 
@@ -47,16 +47,9 @@ $ cd ../..
 $ repo sync -j4 --force-sync
 ```
 
-### Step Four: Configure source
+### Step Four: Add needed code
 
 ```
--- Fix a build error:
-$ nano frameworks/base/tools/aapt/Images.cpp
-- Add the contents of https://github.com/vilinfield/android_frameworks_base/commit/098f8ff0e7f2007fe34b87739211a9ee0d472ee4 to the proper location of the file (shown below).
-- On line 1141 change FILE* fp; to: 
-
-FILE* volatile fp;
-
 -- Fix snap camera build error
 $ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
 
@@ -74,7 +67,7 @@ $ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
 ### Step Five: Build setup
 
 ```
--- Setup ccache (optional - for the second command replace 50G with the ammount you want cached):
+-- Setup ccache (optional - for the second command replace 100G with the ammount you want cached):
 $ nano ~/.bashrc
 - Append 'export USE_CCACHE=1' without quotes to the end of this file.
 $ prebuilts/misc/linux-x86/ccache/ccache -M 100G 
