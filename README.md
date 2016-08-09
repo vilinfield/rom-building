@@ -39,7 +39,6 @@ $ git config --global user.email "you@example.com"
 $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
 -- Download the local manifests (these are some changes to the code as well as a few of my own repos to get Dirty Unicorns to build):
 $ cd .repo/local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/local_manifest.xml 
 $ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/roomservice.xml 
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
