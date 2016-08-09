@@ -50,23 +50,6 @@ $ repo sync -j4 --force-sync
 ### Step Four: Configure source
 
 ```
--- Add ffmpeg support:
-$ nano vendor/du/config/common.mk
-- Add the contents of http://github.com/kularny/android_vendor_du/commit/7180fec7ed607ea1077cd6c83b23a8f0abdca6e0 to the proper location of the file (shown below).
-- On lines 64 to 75 add the following code:
-
-# Stagefright FFMPEG plugin
- ifneq ($(BOARD_USES_QCOM_HARDWARE),true)
- PRODUCT_PACKAGES += \
-     libffmpeg_extractor \
-     libffmpeg_omx \
-     media_codecs_ffmpeg.xml
- 
- PRODUCT_PROPERTY_OVERRIDES += \
-     media.sf.omx-plugin=libffmpeg_omx.so \
-     media.sf.extractor-plugin=libffmpeg_extractor.so
- endif
- 
 -- Fix a build error:
 $ nano frameworks/base/tools/aapt/Images.cpp
 - Add the contents of https://github.com/vilinfield/android_frameworks_base/commit/098f8ff0e7f2007fe34b87739211a9ee0d472ee4 to the proper location of the file (shown below).
