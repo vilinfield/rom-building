@@ -38,11 +38,13 @@ $ git config --global user.email "you@example.com"
 -- Get the source initialized:
 $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
 -- Download the local manifests (these are some changes to the code as well as a few of my own repos to get Dirty Unicorns to build):
-$ cd .repo/local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/roomservice.xml 
+$ cd .repo
+$ mkdir local_manifests
+$ cd local_manifests/
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/local_manifest.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
-$ repo sync -j4
+$ repo sync -j4 --force-sync
 ```
 
 ### Step Four: Configure source
@@ -92,7 +94,7 @@ $ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
 -- Setup ccache (optional - for the second command replace 50G with the ammount you want cached):
 $ nano ~/.bashrc
 - Append 'export USE_CCACHE=1' without quotes to the end of this file.
-$ prebuilts/misc/linux-x86/ccache/ccache -M 50G 
+$ prebuilts/misc/linux-x86/ccache/ccache -M 100G 
 ```
 
 ### Step Six: Build
@@ -102,6 +104,7 @@ $ prebuilts/misc/linux-x86/ccache/ccache -M 50G
 $ . build/envsetup.sh
 -- Build for your device (this can take time depending on the speed of your computer):
 $ brunch Z00A
+- OR brunch Z008
 ```
 
 ```
