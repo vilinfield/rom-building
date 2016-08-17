@@ -3,13 +3,10 @@
 
 <!-- Remotes -->
 <remote name="cm" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-13.0" />
-<remote name="cm-caf" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-13.0-caf" />
 <remote name="themuppets" fetch="https://github.com/TheMuppets/" revision="refs/heads/cm-13.0" />
-<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-mm" />
+<remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfield-caf" fetch="https://github.com/vilinfield/" revision="refs/heads/m-caf" />
-<remote name="vilinfield-test" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0-test" />
-<remote name="dirtyunicorns" fetch="https://github.com/DirtyUnicorns/" revision="refs/heads/m-caf" />
-<remote name="brokenrom" fetch="https://github.com/BrokenROM/" revision="refs/heads/m6.0.1-caf" />
 
 <!-- Remove projects -->
 <remove-project name="android_hardware_intel_common_libmix" />
@@ -57,7 +54,7 @@
 <!-- Device files - Z00A + Z008 -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
-<project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield-test" />
+<project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield-cm" />
 <project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="cm" />
 <project path="vendor/asus" name="proprietary_vendor_asus" remote="themuppets" />
 
