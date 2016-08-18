@@ -37,7 +37,7 @@
 <remove-project name="SlimRoms/hardware_ril" />
 <project path="hardware/ril" remote="cyanogenmod" name="android_hardware_ril" />
 <remove-project name="platform/packages/apps/MusicFX" />
-<project name="android_external_libncurses" path="external/libncurses" remote="cm" />
+<project name="android_external_libncurses" path="external/libncurses" remote="cyanogenmod" />
 <remove-project name="platform/prebuilts/clang/darwin-x86/host/3.6" />
 <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
 <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
