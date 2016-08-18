@@ -7,6 +7,38 @@
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/slim-mm" />
 <remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
 
+<!-- Remove projects -->
+<remove-project name="android_hardware_intel_common_libmix" />
+<project path="hardware/intel/common/libmix" name="android_hardware_intel_common_libmix" remote="cyanogenmod" />
+<remove-project name="android_hardware_intel_common_libva" />
+<project path="hardware/intel/common/libva" name="android_hardware_intel_common_libva" remote="cyanogenmod" />
+<remove-project name="android_hardware_intel_common_libwsbm" />
+<project path="hardware/intel/common/libwsbm" name="android_hardware_intel_common_libwsbm" remote="cyanogenmod" />
+<remove-project name="android_hardware_intel_common_omx-components" />
+<project path="hardware/intel/common/omx-components" name="android_hardware_intel_common_omx-components" remote="cyanogenmod" />
+<remove-project name="android_hardware_intel_img_hwcomposer" />
+<project path="hardware/intel/img/hwcomposer" name="android_hardware_intel_img_hwcomposer" remote="cyanogenmod" />
+<remove-project name="android_hardware_intel_img_psb_headers" />
+<project path="hardware/intel/img/psb_headers" name="android_hardware_intel_img_psb_headers" remote="cyanogenmod" />
+<remove-project name="android_hardware_intel_img_psb_video" />
+<project path="hardware/intel/img/psb_video" name="android_hardware_intel_img_psb_video" remote="cyanogenmod" />
+<remove-project name="android_hardware_qcom_audio" />
+<project name="android_hardware_qcom_audio" path="hardware/qcom/audio/default" remote="cyanogenmod" />
+<remove-project name="android_hardware_qcom_camera" />
+<project name="android_hardware_qcom_camera" path="hardware/qcom/camera" remote="cyanogenmod" />
+<remove-project name="android_hardware_qcom_display" />
+<project name="android_hardware_qcom_display" path="hardware/qcom/display" remote="cyanogenmod" />
+<remove-project name="android_hardware_qcom_gps" />
+<project name="android_hardware_qcom_gps" path="hardware/qcom/gps" remote="cyanogenmod" />
+<remove-project name="android_hardware_qcom_media" />
+<project name="android_hardware_qcom_media" path="hardware/qcom/media/default" remote="cyanogenmod" />
+<remove-project name="platform/external/tinyalsa" />
+<project path="external/tinyalsa" remote="cyanogenmod" name="android_external_tinyalsa" groups="pdk" />
+<remove-project name="android_hardware_ril" />
+<project path="hardware/ril" remote="cyanogenmod" name="android_hardware_ril" />
+<remove-project name="platform/packages/apps/MusicFX" />
+<project name="android_external_libncurses" path="external/libncurses" remote="cm" />
+
 <!-- Device files - Z00A + Z008 -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
@@ -15,3 +47,11 @@
 <project path="vendor/asus" name="proprietary_vendor_asus" remote="themuppets" />
 
 </manifest>
+
+
+
+
+
+
+
+
