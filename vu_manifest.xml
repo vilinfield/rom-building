@@ -7,6 +7,10 @@
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/vu-mm" />
 <remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
 
+<!-- CMSDK -->
+<remove-project name="cm_platform_sdk" />
+<project path="vendor/cmsdk" name="cm_platform_sdk" remote="cyanogenmod" />
+
 <!-- Device files - Z00A + Z008 -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
