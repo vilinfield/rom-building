@@ -38,6 +38,15 @@
 <project path="hardware/ril" remote="cyanogenmod" name="android_hardware_ril" />
 <remove-project name="platform/packages/apps/MusicFX" />
 <project name="android_external_libncurses" path="external/libncurses" remote="cm" />
+<remove-project name="platform/prebuilts/clang/darwin-x86/host/3.6" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/host/headers" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
+<remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+<remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
 
 <!-- Device files - Z00A + Z008 -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
