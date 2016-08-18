@@ -8,7 +8,7 @@
 <remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
 
 <!-- CMSDK -->
-<remove-project name="cm_platform_sdk" />
+<remove-project name="VanillaCoding/cm_platform_sdk" />
 <project path="vendor/cmsdk" name="cm_platform_sdk" remote="cyanogenmod" />
 
 <!-- Device files - Z00A + Z008 -->
