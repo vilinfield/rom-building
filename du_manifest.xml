@@ -3,6 +3,7 @@
 
 <!-- Remotes -->
 <remote name="cm" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-13.0" />
+<remote name="du-lpop" fetch="https://github.com/DirtyUnicorns/" revision="refs/heads/lollipop-caf" />
 <remote name="themuppets" fetch="https://github.com/TheMuppets/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-mm" />
 <remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
@@ -58,4 +59,7 @@
 <project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="cm" />
 <project path="vendor/asus" name="proprietary_vendor_asus" remote="vilinfield-cm" />
 
+<!-- Music test -->
+<project path="packages/apps/Apollo" name="android_packages_apps_Apollo" remote="du-lpop" />
+<project path="packages/apps/DSPManager" name="android_packages_apps_DSPManager" remote="du-lpop" />
 </manifest>
