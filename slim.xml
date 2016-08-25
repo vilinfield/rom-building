@@ -3,7 +3,6 @@
 
 <!-- Remotes -->
 <remote name="cyanogenmod" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-13.0" />
-<remote name="themuppets" fetch="https://github.com/TheMuppets/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/slim-mm" />
 <remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
 
@@ -36,9 +35,10 @@
 <project path="external/tinyalsa" remote="cyanogenmod" name="android_external_tinyalsa" groups="pdk" />
 <remove-project name="SlimRoms/hardware_ril" />
 <project path="hardware/ril" remote="cyanogenmod" name="android_hardware_ril" />
-<project path="hardware/ril-caf" remote="cyanogenmod" name="android_hardware_ril" />
 <remove-project name="platform/packages/apps/MusicFX" />
 <project name="android_external_libncurses" path="external/libncurses" remote="cyanogenmod" />
+
+<!-- Remove x86 prebuilts -->
 <remove-project name="platform/prebuilts/clang/darwin-x86/host/3.6" />
 <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
 <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
@@ -49,11 +49,11 @@
 <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
 <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
 
-<!-- Device files - Z00A + Z008 -->
+<!-- Zenfone 2 files (Z00A + Z008) -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
 <project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield" />
 <project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="cyanogenmod" />
-<project path="vendor/asus" name="proprietary_vendor_asus" remote="themuppets" />
+<project path="vendor/asus" name="proprietary_vendor_asus" remote="vilinfield-cm" />
 
 </manifest>
