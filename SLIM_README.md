@@ -42,7 +42,7 @@ $ git config --global user.email "you@example.com"
 
 ```
 -- Get the source initialized:
-$ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
+$ repo init -u git://github.com/SlimRoms/platform_manifest.git -b mm6.0
 -- Download the local manifests (these are some changes to the code as well as a few of my own repos to get Dirty Unicorns to build):
 $ cd .repo
 $ mkdir local_manifests
