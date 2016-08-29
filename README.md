@@ -8,14 +8,17 @@
 
 - Download my builds here: http://forum.xda-developers.com/zenfone2/development/rom-unofficial-dirty-unicorns-v10-4-20-t3422817
 
+## PAC-ROM
+
+- Look at the readme to build here: https://github.com/vilinfield/rom-building/blob/master/PAC_README.md
+
+
+- Builds fine with no major bugs
+
+- Download my builds here: http://forum.xda-developers.com/zenfone2/development/rom-pac-rom-mm-aug-27-2016-t3450066/page2
+
 ## Slimroms
 
 - Look at the readme to build here: https://github.com/vilinfield/rom-building/blob/master/SLIM_README.md
 
-- Builds fine but no simcard detection and issue with poweroff rebooting the phone in menu
-
-## OmniROM
-
-- Look at the readme to build here: https://github.com/vilinfield/rom-building/blob/master/OMNI_README.md
-
-- Trying now (Not sure what will happen)
+- Builds fine but it has no sim card detection (same with all AOSP (non caf) ROM's
