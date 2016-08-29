@@ -21,4 +21,4 @@
 
 - Look at the readme to build here: https://github.com/vilinfield/rom-building/blob/master/SLIM_README.md
 
-- Builds fine but it has no sim card detection (same with all AOSP (non caf) ROM's
+- Builds fine but it has no sim card detection (same with all AOSP [non caf] ROM's)
