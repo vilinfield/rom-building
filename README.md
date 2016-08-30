@@ -15,7 +15,7 @@
 
 - Builds fine with no major bugs
 
-- Download my builds here: http://forum.xda-developers.com/zenfone2/development/rom-pac-rom-mm-aug-27-2016-t3450066/page2
+- Download my builds here: http://forum.xda-developers.com/zenfone2/development/rom-pac-rom-mm-aug-27-2016-t3450066
 
 ## Slimroms
 
