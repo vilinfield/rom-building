@@ -6,6 +6,8 @@
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-mm" />
 <remote name="vilinfield-cm" fetch="https://github.com/vilinfield/" revision="refs/heads/cm-13.0" />
 <remote name="vilinfield-caf" fetch="https://github.com/vilinfield/" revision="refs/heads/m-caf" />
+<remote name="jrior001-vendor" fetch="https://github.com/jrior001/" revision="refs/heads/zf2_Mrebase" />
+<remote name="jrior001-kernel" fetch="https://github.com/jrior001/" revision="refs/heads/M-rebase" />
 
 <!-- Remove projects -->
 <remove-project name="android_hardware_intel_common_libmix" />
@@ -54,7 +56,7 @@
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
 <project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield" />
-<project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="cm" />
-<project path="vendor/asus" name="proprietary_vendor_asus" remote="vilinfield-cm" />
+<project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="jrior001-kernel" />
+<project path="vendor/asus" name="proprietary_vendor_asus" remote="jrior001-vendor" />
 
 </manifest>
