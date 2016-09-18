@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+<!-- Remotes -->
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/pac-mm" />
+<remote name="jrior001-vendor" fetch="https://github.com/jrior001/" revision="refs/heads/zf2_Mrebase" />
+<remote name="jrior001-kernel" fetch="https://github.com/jrior001/" revision="refs/heads/M-rebase" />
+
+<project path="external/stlport" name="android_external_stlport" remote="pac" revision="pac-6.0" />
+<project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
+<project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
+<project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield" />
+<project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="jrior001-kernel" />
+<project path="vendor/asus" name="proprietary_vendor_asus" remote="jrior001-vendor" />
+
+</manifest>
