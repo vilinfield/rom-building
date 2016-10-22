@@ -1,4 +1,4 @@
-# Build PAC-ROM for the Asus Zenfone 2 (Z00A + Z008)
+# Build Cyanognemod with for MM bootloader for the Asus Zenfone 2 (Z00A + Z008)
 
 ## Notes
 
@@ -24,9 +24,9 @@ $ mkdir ~/bin
 $ PATH=~/bin:$PATH
 $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 $ chmod a+x ~/bin/repo
--- Make a folder to store the ROM's source code (pac can be replaced with whatever you want):
-$ mkdir ~/pac 
-$ cd ~/pac
+-- Make a folder to store the ROM's source code (cm can be replaced with whatever you want):
+$ mkdir ~/cm
+$ cd ~/cm
 -- Configure Git:
 $ git config --global user.name "Your Name"
 $ git config --global user.email "you@example.com"
@@ -36,27 +36,15 @@ $ git config --global user.email "you@example.com"
 
 ```
 -- Get the source initialized:
-$ repo init -u https://github.com/PAC-ROM/pac-rom.git -b pac-6.0 -g all,-notdefault,-darwin
--- Download the local manifests (these are some changes to the code as well as a few of my own repos to get PAC-ROM to build):
+$ repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
+-- Download the local manifeststo build for the MM bootloader:
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/pac/pac.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/cm-mm.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync
-```
-
-### Step Four: Change some code
-
-```
--- Swap dependencies 
-cd vendor/pac/dependencies
-rm Z008.dependencies
-rm Z00A.dependencies
-wget https://raw.githubusercontent.com/vilinfield/rom-building/master/pac/Z008.dependencies
-wget https://raw.githubusercontent.com/vilinfield/rom-building/master/pac/Z00A.dependencies
-cd ../..
 ```
 
 ### Step Five: Build setup
@@ -71,13 +59,16 @@ $ prebuilts/misc/linux-x86/ccache/ccache -M 100G
 ### Step Six: Build
 
 ```
+-- Load build tools:
+$ . build/envsetup.sh
 -- Build for your device (this can take time depending on the speed of your computer):
-$ ./build-pac.sh Z00A
-- ./build-pac.sh Z008
+$ brunch Z00A
+- OR brunch Z008
 ```
 
 ```
 -- Between builds:
 $ make clobber
 - you may also run 'make clean' as well
+$ . build/envsetup.sh
 ```
