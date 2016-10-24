@@ -17,7 +17,7 @@
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="jrior001-main" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="jrior001-main" />
 <project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="jrior001-main" />
-<project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="jrior001-kernel" />
+<project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="jrior001-main" />
 <project path="vendor/asus" name="proprietary_vendor_asus" remote="jrior001-main" />
 
 </manifest>
