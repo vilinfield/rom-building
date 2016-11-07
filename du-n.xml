@@ -6,19 +6,12 @@
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n" />
 
 <!-- Remove projects -->
-<remove-project name="android_hardware_intel_common_libmix" />
 <project path="hardware/intel/common/libmix" name="android_hardware_intel_common_libmix" remote="cm" />
-<remove-project name="android_hardware_intel_common_libva" />
 <project path="hardware/intel/common/libva" name="android_hardware_intel_common_libva" remote="cm" />
-<remove-project name="android_hardware_intel_common_libwsbm" />
 <project path="hardware/intel/common/libwsbm" name="android_hardware_intel_common_libwsbm" remote="cm" />
-<remove-project name="android_hardware_intel_common_omx-components" />
 <project path="hardware/intel/common/omx-components" name="android_hardware_intel_common_omx-components" remote="cm" />
-<remove-project name="android_hardware_intel_img_hwcomposer" />
 <project path="hardware/intel/img/hwcomposer" name="android_hardware_intel_img_hwcomposer" remote="cm" />
-<remove-project name="android_hardware_intel_img_psb_headers" />
 <project path="hardware/intel/img/psb_headers" name="android_hardware_intel_img_psb_headers" remote="cm" />
-<remove-project name="android_hardware_intel_img_psb_video" />
 <project path="hardware/intel/img/psb_video" name="android_hardware_intel_img_psb_video" remote="cm" />
 <remove-project name="android_hardware_qcom_audio" />
 <project name="android_hardware_qcom_audio" path="hardware/qcom/audio/default" remote="cm" />
