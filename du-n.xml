@@ -6,6 +6,23 @@
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n" />
 
 <!-- Remove projects -->
+<remove-project name="platform/hardware/intel/common/libmix" />
+<remove-project name="platform/hardware/intel/common/libva" />
+<remove-project name="platform/hardware/intel/common/libwsbm" />
+<remove-project name="platform/hardware/intel/common/omx-components" />
+<remove-project name="platform/hardware/intel/img/hwcomposer" />
+<remove-project name="platform/hardware/intel/img/psb_headers" />
+<remove-project name="platform/hardware/intel/img/psb_video" />  
+<remove-project name="android_hardware_qcom_audio" />
+<remove-project name="android_hardware_qcom_camera" />
+<remove-project name="android_hardware_qcom_display" />
+<remove-project name="android_hardware_qcom_gps" />
+<remove-project name="android_hardware_qcom_media" />
+<remove-project name="android_external_tinyalsa" />
+<remove-project name="android_hardware_ril" />
+<remove-project name="android_packages_apps_MusicFX" />
+
+<!-- Replaced repos -->
 <project path="hardware/intel/common/libmix" name="android_hardware_intel_common_libmix" remote="cm" />
 <project path="hardware/intel/common/libva" name="android_hardware_intel_common_libva" remote="cm" />
 <project path="hardware/intel/common/libwsbm" name="android_hardware_intel_common_libwsbm" remote="cm" />
@@ -13,21 +30,13 @@
 <project path="hardware/intel/img/hwcomposer" name="android_hardware_intel_img_hwcomposer" remote="cm" />
 <project path="hardware/intel/img/psb_headers" name="android_hardware_intel_img_psb_headers" remote="cm" />
 <project path="hardware/intel/img/psb_video" name="android_hardware_intel_img_psb_video" remote="cm" />
-<remove-project name="android_hardware_qcom_audio" />
 <project name="android_hardware_qcom_audio" path="hardware/qcom/audio/default" remote="cm" />
-<remove-project name="android_hardware_qcom_camera" />
 <project name="android_hardware_qcom_camera" path="hardware/qcom/camera" remote="cm" />
-<remove-project name="android_hardware_qcom_display" />
 <project name="android_hardware_qcom_display" path="hardware/qcom/display" remote="cm" />
-<remove-project name="android_hardware_qcom_gps" />
 <project name="android_hardware_qcom_gps" path="hardware/qcom/gps" remote="cm" />
-<remove-project name="android_hardware_qcom_media" />
 <project name="android_hardware_qcom_media" path="hardware/qcom/media/default" remote="cm" />
-<remove-project name="platform/external/tinyalsa" />
 <project path="external/tinyalsa" remote="cm" name="android_external_tinyalsa" groups="pdk" />
-<remove-project name="android_hardware_ril" />
 <project path="hardware/ril" remote="cm" name="android_hardware_ril" />
-<remove-project name="platform/packages/apps/MusicFX" />
 
 <!-- Added Repos -->
 <project path="packages/apps/Browser" remote="cm" name="android_packages_apps_Browser" groups="pdk-fs" />
