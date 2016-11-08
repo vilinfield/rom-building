@@ -64,6 +64,44 @@ $ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
              getWindow().clearPrivateFlags(
                      WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
          }
+         
+-- Make a du version of the x86 mediaextractor seccomp (need to fix a build error)
+
+$ cd frameworks/av/services/mediaextractor/minijail/seccomp_policy/
+$ cp mediaextractor-seccomp-x86.policy mediaextractor-seccomp-x86-du.policy
+
+-- Add in DTB for the zenfone 2
+$ nano build/core/generate_extra_images.mk
+
+- Add this to line 79 (after ALL_MODULES.$(LOCAL_MODULE).INSTALLED += $(INSTALLED_PERSISTIMAGE_TARGET))
+
+#----------------------------------------------------------------------
+# Generate device tree image (dt.img)
+#----------------------------------------------------------------------
+ifeq ($(strip $(BOARD_KERNEL_SEPARATED_DT)),true)
+ifeq ($(strip $(BUILD_TINY_ANDROID)),true)
+include device/qcom/common/dtbtool/Android.mk
+endif
+
+DTBTOOL := $(HOST_OUT_EXECUTABLES)/dtbTool$(HOST_EXECUTABLE_SUFFIX)
+
+INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
+
+possible_dtb_dirs = $(KERNEL_OUT)/arch/$(TARGET_KERNEL_ARCH)/boot/dts/ $(KERNEL_OUT)/arch/arm/boot/
+dtb_dir = $(firstword $(wildcard $(possible_dtb_dirs)))
+
+define build-dtimage-target
+    $(call pretty,"Target dt image: $(INSTALLED_DTIMAGE_TARGET)")
+    $(hide) $(DTBTOOL) -o $@ -s $(BOARD_KERNEL_PAGESIZE) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/
+    $(hide) chmod a+r $@
+endef
+
+$(INSTALLED_DTIMAGE_TARGET): $(DTBTOOL) $(INSTALLED_KERNEL_TARGET)
+	$(build-dtimage-target)
+
+ALL_DEFAULT_INSTALLED_MODULES += $(INSTALLED_DTIMAGE_TARGET)
+ALL_MODULES.$(LOCAL_MODULE).INSTALLED += $(INSTALLED_DTIMAGE_TARGET)
+endif
 ```
 
 ### Step Five: Build setup
