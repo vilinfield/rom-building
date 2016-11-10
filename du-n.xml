@@ -5,8 +5,6 @@
 <remote name="cm" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-14.1" />
 <remote name="jason" fetch="https://github.com/jrior001/" revision="refs/heads/cm-14.1" />
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n" />
-  
-  
 
 <!-- Remove projects -->
 <remove-project name="platform/hardware/intel/common/libmix" />
