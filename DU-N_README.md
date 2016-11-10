@@ -69,6 +69,24 @@ $ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
 
 $ cd frameworks/av/services/mediaextractor/minijail/seccomp_policy/
 $ cp mediaextractor-seccomp-x86.policy mediaextractor-seccomp-x86-du.policy
+
+-- Fix java heap size error
+
+-Run these commands from the root of the source directory
+
+$ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+$ ./prebuilts/sdk/tools/jack-admin kill-server
+$ ./prebuilts/sdk/tools/jack-admin start-server
+
+-- Fix caf builds from here https://review.cyanogenmod.org/#/c/164108/
+
+$ nano frameworks/native/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
+
+- Add the two lines below. (the one above and below the middle line)
+
+#ifdef QTI_BSP
+#include <ExSurfaceFlinger/ExSurfaceFlinger.h>
+#endif
 ```
 
 ### Step Five: Build setup
