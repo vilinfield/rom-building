@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+<!-- Dirty Unicorns Nougat (7.0) Manifest For The Zenfone 2 (Z00A/Z008)-->
 
 <!-- Remotes -->
 <remote name="cm" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-14.1" />
 <remote name="jason" fetch="https://github.com/jrior001/" revision="refs/heads/cm-14.1" />
 <remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n" />
 
-<!-- Remove projects -->
+<!-- Removed Repos -->
 <remove-project name="platform/hardware/intel/common/libmix" />
 <remove-project name="platform/hardware/intel/common/libva" />
 <remove-project name="platform/hardware/intel/common/libwsbm" />
@@ -14,6 +15,7 @@
 <remove-project name="platform/hardware/intel/img/hwcomposer" />
 <remove-project name="platform/hardware/intel/img/psb_headers" />
 <remove-project name="platform/hardware/intel/img/psb_video" />  
+<remove-project name="platform/hardware/intel/common/utils" />  
 <remove-project name="android_hardware_qcom_audio" />
 <remove-project name="android_hardware_qcom_camera" />
 <remove-project name="android_hardware_qcom_display" />
@@ -23,7 +25,7 @@
 <remove-project name="android_hardware_ril" />
 <remove-project name="android_packages_apps_MusicFX" />
 
-<!-- Replaced repos -->
+<!-- Replace Some Removed Repos -->
 <project path="hardware/intel/common/libmix" name="android_hardware_intel_common_libmix" remote="cm" />
 <project path="hardware/intel/common/libva" name="android_hardware_intel_common_libva" remote="cm" />
 <project path="hardware/intel/common/libwsbm" name="android_hardware_intel_common_libwsbm" remote="cm" />
@@ -31,23 +33,24 @@
 <project path="hardware/intel/img/hwcomposer" name="android_hardware_intel_img_hwcomposer" remote="cm" />
 <project path="hardware/intel/img/psb_headers" name="android_hardware_intel_img_psb_headers" remote="cm" />
 <project path="hardware/intel/img/psb_video" name="android_hardware_intel_img_psb_video" remote="cm" />
-<project name="android_hardware_qcom_audio" path="hardware/qcom/audio/default" remote="cm" />
-<project name="android_hardware_qcom_camera" path="hardware/qcom/camera" remote="cm" />
-<project name="android_hardware_qcom_display" path="hardware/qcom/display" remote="cm" />
-<project name="android_hardware_qcom_gps" path="hardware/qcom/gps" remote="cm" />
-<project name="android_hardware_qcom_media" path="hardware/qcom/media/default" remote="cm" />
-<project path="external/tinyalsa" remote="cm" name="android_external_tinyalsa" groups="pdk" />
-<project path="hardware/ril" remote="cm" name="android_hardware_ril" />
+<project path="hardware/intel/common/utils" name="android_hardware_intel_common_utils" remote="cm" />
+<project path="hardware/qcom/audio/default" name="android_hardware_qcom_audio" remote="cm" />
+<project path="hardware/qcom/camera" name="android_hardware_qcom_camera" remote="cm" />
+<project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="cm" />
+<project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="cm" />
+<project path="hardware/qcom/media/default" name="android_hardware_qcom_media" remote="cm" />
+<project path="external/tinyalsa" name="android_external_tinyalsa" groups="pdk" remote="cm" />
+<project path="hardware/ril" name="android_hardware_ril" remote="cm" />
 
 <!-- Added Repos -->
 <project path="packages/apps/Browser" remote="cm" name="android_packages_apps_Browser" groups="pdk-fs" />
-<project name="android_external_libncurses" path="external/libncurses" remote="cm" />
+<project path="external/libncurses" name="android_external_libncurses" remote="cm" />
 <project path="external/stlport" name="android_external_stlport" remote="cm" />
 <project path="packages/apps/Snap" name="android_packages_apps_Snap" remote="cm" />
 <project path="external/stagefright-plugins" remote="cm" name="android_external_stagefright-plugins" />
 <project path="external/ffmpeg" remote="cm" name="android_external_ffmpeg" />
 
-<!-- Zenfone 2 files (Z00A + Z008) -->
+<!-- Zenfone 2 Device Files (Z00A/Z008) -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
 <project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield" />
