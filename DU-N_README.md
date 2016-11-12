@@ -87,6 +87,10 @@ $ nano frameworks/native/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
 #ifdef QTI_BSP
 #include <ExSurfaceFlinger/ExSurfaceFlinger.h>
 #endif
+
+-- Fix another build error
+
+- Add the changes from here http://review.cyanogenmod.org/#/c/158921/
 ```
 
 ### Step Five: Build setup
