@@ -70,31 +70,11 @@ $ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
 $ cd frameworks/av/services/mediaextractor/minijail/seccomp_policy/
 $ cp mediaextractor-seccomp-x86.policy mediaextractor-seccomp-x86-du.policy
 
--- Fix java heap size error
+-- Fix build errors / issues
 
--Run these commands from the root of the source directory
-
-$ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
-$ ./prebuilts/sdk/tools/jack-admin kill-server
-$ ./prebuilts/sdk/tools/jack-admin start-server
-
--- Fix caf builds from here https://review.cyanogenmod.org/#/c/164108/
-
-$ nano frameworks/native/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
-
-- Add the two lines below. (the one above and below the middle line)
-
-#ifdef QTI_BSP
-#include <ExSurfaceFlinger/ExSurfaceFlinger.h>
-#endif
-
--- Fix another build error
-
-- Add the changes from http://review.cyanogenmod.org/#/c/158921/
-
--- Fix some issues
-
-- add chnages from http://review.cyanogenmod.org/#/c/170452/
+- Add changes from http://review.cyanogenmod.org/#/c/158921/
+- Add chnages from http://review.cyanogenmod.org/#/c/170452/
+- Add changes from https://review.cyanogenmod.org/#/c/164108/
 ```
 
 ### Step Five: Build setup
@@ -111,6 +91,10 @@ $ prebuilts/misc/linux-x86/ccache/ccache -M 100G
 ```
 -- Load build tools:
 $ . build/envsetup.sh
+-- Fix heap error
+$ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+$ ./prebuilts/sdk/tools/jack-admin kill-server
+$ ./prebuilts/sdk/tools/jack-admin start-server
 -- Build for your device (this can take time depending on the speed of your computer):
 $ brunch Z00A
 - OR brunch Z008
@@ -119,6 +103,5 @@ $ brunch Z00A
 ```
 -- Between builds:
 $ make clobber
-- you may also run 'make clean' as well
-$ . build/envsetup.sh
+$ make clean
 ```
