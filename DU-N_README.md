@@ -90,7 +90,11 @@ $ nano frameworks/native/services/surfaceflinger/SurfaceFlinger_hwc1.cpp
 
 -- Fix another build error
 
-- Add the changes from here http://review.cyanogenmod.org/#/c/158921/
+- Add the changes from http://review.cyanogenmod.org/#/c/158921/
+
+-- Fix some issues
+
+- add chnages from http://review.cyanogenmod.org/#/c/170452/
 ```
 
 ### Step Five: Build setup
