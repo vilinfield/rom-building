@@ -27,3 +27,9 @@
 - Look at readme to build here: https://github.com/vilinfield/rom-building/blob/master/DU-N_README.md
 
 - Builds but does not boot
+
+## Crdroid 7.1
+
+- Look at readme to build here: https://github.com/vilinfield/rom-building/blob/master/CRDROID_README.md
+
+- In the works
