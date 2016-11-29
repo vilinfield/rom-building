@@ -26,4 +26,4 @@
 
 - Look at readme to build here: https://github.com/vilinfield/rom-building/blob/master/DU-N_README.md
 
-- Does not build as of yet
+- Builds but does not boot
