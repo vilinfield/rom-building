@@ -6,10 +6,10 @@
 <remote name="cmfourteenone" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-14.1" />
 
 <project path="external/stlport" name="android_external_stlport" remote="cmfourteenone" />
-<project path="device/asus/Z00A" name="device_asus_Z00A_crdroid" remote="vilinfield" />
-<project path="device/asus/Z008" name="device_asus_Z008_crdroid" remote="vilinfield" />
+<project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="cmfourteenone" />
+<project path="device/asus/Z008" name="android_device_asus_Z008" remote="cmfourteenone" />
 <project path="device/asus/mofd-common" name="device_asus_mofd-common_crdroid" remote="vilinfield" />
-<project path="kernel/asus/moorefield" name="kernel_asus_moorefield" remote="vilinfield" />
+<project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="cmfourteenone" />
 <project path="vendor/asus" name="proprietary_vendor_asus" remote="vilinfield" />
 
 </manifest>
