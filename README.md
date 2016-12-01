@@ -32,4 +32,4 @@
 
 - Look at readme to build here: https://github.com/vilinfield/rom-building/blob/master/CRDROID_README.md
 
-- In the works
+- Builds but does not boot
