@@ -6,7 +6,7 @@
 
 -- Also this guide most likely wont work at the present
 
-### Step 1: Set up your environment 
+### Step One: Set up your environment 
 
 ```
 -- Make sure your system is up to date:
@@ -47,6 +47,11 @@ $ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/crdroid.
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 
+```
+
+### Step Five: Fix boot
+```
+-- In the works
 ```
 
 ### Step Five: Build setup
