@@ -6,7 +6,7 @@
 
 -- Also this guide most likely wont work at the present
 
-### Step 1: Set up your environment 
+### Step One: Set up your environment 
 
 ```
 -- Make sure your system is up to date:
@@ -52,19 +52,6 @@ $ repo sync -j4
 ### Step Four: Add needed code
 
 ```
--- Fix snap camera build error
-$ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
-
-- Delete lines 1825-1831 shown below
-
-        if (mPowerShutter && mInCameraApp) {
-             getWindow().addPrivateFlags(
-                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
-         } else {
-             getWindow().clearPrivateFlags(
-                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
-         }
-         
 -- Make a du version of the x86 mediaextractor seccomp (need to fix a build error)
 
 $ cd frameworks/av/services/mediaextractor/minijail/seccomp_policy/
@@ -75,6 +62,10 @@ $ cp mediaextractor-seccomp-x86.policy mediaextractor-seccomp-x86-du.policy
 - Add changes from http://review.cyanogenmod.org/#/c/158921/
 - Add chnages from http://review.cyanogenmod.org/#/c/170452/
 - Add changes from https://review.cyanogenmod.org/#/c/164108/
+- Add changes from https://review.cyanogenmod.org/#/c/160911/
+
+-- Revert this change
+- Here http://gerrit.dirtyunicorns.com/#/c/2914/
 ```
 
 ### Step Five: Build setup
