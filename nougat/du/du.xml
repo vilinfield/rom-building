@@ -47,7 +47,6 @@
 <project path="packages/apps/Browser" name="android_packages_apps_Browser" groups="pdk-fs" remote="cm" />
 <project path="external/libncurses" name="android_external_libncurses" remote="cm" />
 <project path="external/stlport" name="android_external_stlport" remote="cm" />
-<project path="external/ffmpeg" name="android_external_ffmpeg" remote="cm" />
 <project path="packages/resources/devicesettings" name="android_packages_resources_devicesettings" remote="cm" />
 
 <!-- Zenfone 2 Device Files (Z00A/Z008) -->

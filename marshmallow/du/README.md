@@ -1,10 +1,10 @@
-# Build Cyanognemod with for MM bootloader for the Asus Zenfone 2 (Z00A + Z008)
+# Build Dirty Unicorns for the Asus Zenfone 2 (Z00A + Z008)
 
 ## Notes
 
 -- This guide is assuming you are running a Debian or Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
 
-### Step 1: Set up your environment 
+### Step One: Set up your environment 
 
 ```
 -- Make sure your system is up to date:
@@ -24,9 +24,9 @@ $ mkdir ~/bin
 $ PATH=~/bin:$PATH
 $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 $ chmod a+x ~/bin/repo
--- Make a folder to store the ROM's source code (cm can be replaced with whatever you want):
-$ mkdir ~/cm
-$ cd ~/cm
+-- Make a folder to store the ROM's source code (du can be replaced with whatever you want):
+$ mkdir ~/du 
+$ cd ~/du
 -- Configure Git:
 $ git config --global user.name "Your Name"
 $ git config --global user.email "you@example.com"
@@ -36,27 +36,35 @@ $ git config --global user.email "you@example.com"
 
 ```
 -- Get the source initialized:
-$ repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
--- Download the local manifeststo build for the MM bootloader:
+$ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
+-- Download the local manifests (these are some changes to the code as well as a few of my own repos to get Dirty Unicorns to build):
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/cm-mm.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/marshmallow/du/du.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync
 ```
 
-### Step Five: Build setup
+### Step Four: Add needed code
 
 ```
--- Setup ccache (optional - for the second command replace 100G with the ammount you want cached):
-$ nano ~/.bashrc
-- Append 'export USE_CCACHE=1' without quotes to the end of this file.
-$ prebuilts/misc/linux-x86/ccache/ccache -M 100G 
+-- Fix snap camera build error
+$ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
+
+- Delete lines 1825-1831 shown below
+
+        if (mPowerShutter && mInCameraApp) {
+             getWindow().addPrivateFlags(
+                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+         } else {
+             getWindow().clearPrivateFlags(
+                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
+         }
 ```
 
-### Step Six: Build
+### Step Five: Build
 
 ```
 -- Load build tools:
@@ -69,6 +77,5 @@ $ brunch Z00A
 ```
 -- Between builds:
 $ make clobber
-- you may also run 'make clean' as well
 $ . build/envsetup.sh
 ```

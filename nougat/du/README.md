@@ -1,10 +1,8 @@
-# Build crdroid 7.1 for the Asus Zenfone 2 (Z00A + Z008)
+# Build Dirty Unicorns Nougat for the Asus Zenfone 2 (Z00A + Z008)
 
 ## Notes
 
 -- This guide is assuming you are running a Debian or Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
-
--- Also this guide most likely wont work at the present
 
 ### Step One: Set up your environment 
 
@@ -38,32 +36,35 @@ $ git config --global user.email "you@example.com"
 
 ```
 -- Get the source initialized:
-$ repo init -u https://github.com/crdroidandroid/android -b 7.1
--- Download the local manifests (these are some changes to the code as well as a few of my own repos to get crdroid to build):
+$ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b n7x-caf
+-- Download the local manifests (these are some changes to the code as well as a few of my own repos to get Dirty Unicorns to build):
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/crdroid.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/nougat/du/du.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 
 ```
 
-### Step Five: Fix boot
-```
--- In the works
-```
-
-### Step Five: Build setup
+### Step Four: Add needed code
 
 ```
--- Setup ccache (optional - for the second command replace 100G with the ammount you want cached):
-$ nano ~/.bashrc
-- Append 'export USE_CCACHE=1' without quotes to the end of this file.
-$ prebuilts/misc/linux-x86/ccache/ccache -M 100G 
+-- Make a du version of the x86 mediaextractor seccomp (needed to fix a build error)
+
+$ cd frameworks/av/services/mediaextractor/minijail/seccomp_policy/
+$ cp mediaextractor-seccomp-x86.policy mediaextractor-seccomp-x86-du.policy
 ```
 
-### Step Six: Build
+-- Fix build errors / issues
+
+- Add changes from [http://review.cyanogenmod.org/#/c/158921/](http://review.cyanogenmod.org/#/c/158921/)
+- Add chnages from [http://review.cyanogenmod.org/#/c/170452/](http://review.cyanogenmod.org/#/c/170452/)
+- Add changes from [https://review.cyanogenmod.org/#/c/164108/](https://review.cyanogenmod.org/#/c/164108/)
+- Add changes from [https://review.cyanogenmod.org/#/c/160911/](https://review.cyanogenmod.org/#/c/160911/)
+- Revert this commit [http://gerrit.dirtyunicorns.com/#/c/2914/](http://gerrit.dirtyunicorns.com/#/c/2914/)
+
+### Step Five: Build
 
 ```
 -- Load build tools:
@@ -80,5 +81,4 @@ $ brunch Z00A
 ```
 -- Between builds:
 $ make clobber
-$ make clean
 ```

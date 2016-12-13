@@ -9,7 +9,7 @@
 <remote name="jrior001-vendor" fetch="https://github.com/jrior001/" revision="refs/heads/zf2_Mrebase" />
 <remote name="jrior001-kernel" fetch="https://github.com/jrior001/" revision="refs/heads/M-rebase" />
 
-<!-- Remove projects -->
+<!-- Remove and replace projects -->
 <remove-project name="android_hardware_intel_common_libmix" />
 <project path="hardware/intel/common/libmix" name="android_hardware_intel_common_libmix" remote="cm" />
 <remove-project name="android_hardware_intel_common_libva" />

@@ -3,17 +3,8 @@
 
 <!-- Remotes -->
 <remote name="jrior001-main" fetch="https://github.com/jrior001/" revision="refs/heads/zf2_Mrebase" />
-<remote name="jrior001-kernel" fetch="https://github.com/jrior001/" revision="refs/heads/M-rebase" />
 
-<!-- REMOVE OLD DEVICE FILES - UNCOMMENT IF NEEDED
-<remove-project name="android_device_asus_Z00A" />
-<remove-project name="android_device_asus_Z008" />
-<remove-project name="android_device_asus_mofd-common" />
-<remove-project name="android_kernel_asus_moorefield" />
-<remove-project name="proprietary_vendor_asus" />
--->
-
-<!-- DEVICE FILES -->
+<!-- Device files -->
 <project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="jrior001-main" />
 <project path="device/asus/Z008" name="android_device_asus_Z008" remote="jrior001-main" />
 <project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="jrior001-main" />
