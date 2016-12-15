@@ -5,8 +5,7 @@
 <!-- Remotes -->
 <remote name="cm" fetch="https://github.com/CyanogenMod/" revision="refs/heads/cm-14.1" />
 <remote name="jason" fetch="https://github.com/jrior001/" revision="refs/heads/cm-14.1" />
-<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n" />
-<remote name="vilinfield-lab" fetch="https://gitlab.com/vilinfield/" revision="refs/heads/du-n" />
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n7x" />
 
 <!-- Removed Repos -->
 <remove-project name="platform/hardware/intel/common/libmix" />
@@ -48,10 +47,12 @@
 <project path="external/libncurses" name="android_external_libncurses" remote="cm" />
 <project path="external/stlport" name="android_external_stlport" remote="cm" />
 <project path="packages/resources/devicesettings" name="android_packages_resources_devicesettings" remote="cm" />
+<project path="external/stagefright-plugins" name="android_external_stagefright-plugins" remote="cm" />
+<project path="external/ffmpeg" name="android_external_ffmpeg" remote="cm" />
 
 <!-- Zenfone 2 Device Files (Z00A/Z008) -->
-<project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield-lab" />
-<project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield-lab" />
+<project path="device/asus/Z00A" name="android_device_asus_Z00A" remote="vilinfield" />
+<project path="device/asus/Z008" name="android_device_asus_Z008" remote="vilinfield" />
 <project path="device/asus/mofd-common" name="android_device_asus_mofd-common" remote="vilinfield" />
 <project path="kernel/asus/moorefield" name="android_kernel_asus_moorefield" remote="cm" />
 <project path="vendor/asus" name="proprietary_vendor_asus" remote="jason" />
