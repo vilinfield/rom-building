@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+<!-- Remotes -->
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/own-n" />
+
+<!-- LG G3 Device Files (d855 + d852) -->
+<project path="device/lge/d855" name="android_device_lge_d855" remote="vilinfield" />
+<project path="device/lge/d852" name="android_device_lge_d852" remote="vilinfield" />
+<project path="device/lge/g3-common" name="android_device_lge_g3-common" remote="vilinfield" />
+<project path="kernel/lge/g3" name="android_kernel_lge_g3" remote="vilinfield" />
+  
+</manifest>
