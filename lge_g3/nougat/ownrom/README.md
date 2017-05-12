@@ -1,4 +1,4 @@
-# Build OwnROM for the LGG3 (d855/d852)
+# Build OwnROM for the Lge G3 (d855 + d852)
 
 ## Notes
 
@@ -12,8 +12,8 @@ $ sudo apt-get update
 $ sudo apt-get upgrade
 -- Install all build tools:
 $ sudo apt-get install git-core ninja-build gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 lzop maven pngcrush schedtool lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev squashfs-tools openjdk-8-jre openjdk-8-jdk
--- Install tmux if your going to be using ssh (optional)
-$ sudo apt-get install tmux
+-- Install screen if your going to be using ssh (optional)
+$ sudo apt-get install screen
 ```
 
 ### Step Two: Configure Repo and Git  
@@ -41,7 +41,7 @@ $ repo init -u git://github.com/OwnROM/android -b own-n
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/nougat/ownrom/ownrom.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ownrom.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j5 
