@@ -12,8 +12,8 @@ $ sudo apt-get update
 $ sudo apt-get upgrade
 -- Install all build tools:
 $ sudo apt-get install git-core ninja-build gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 lzop maven pngcrush schedtool lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev squashfs-tools openjdk-8-jre openjdk-8-jdk
--- Install screen if your going to be using ssh (optional)
-$ sudo apt-get install screen
+-- Install tmux if your going to be using ssh (optional)
+$ sudo apt-get install tmux
 ```
 
 ### Step Two: Configure Repo and Git  
@@ -44,7 +44,7 @@ $ cd local_manifests/
 $ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ownrom.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
-$ repo sync -j5 
+$ repo sync -j5 --force-sync
 ```
 
 ### Step Four: Build
@@ -57,8 +57,9 @@ $ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation 
 $ ./prebuilts/sdk/tools/jack-admin kill-server
 $ ./prebuilts/sdk/tools/jack-admin start-server
 -- Build for your device (this can take time depending on the speed of your computer):
-$ brunch d852
-- OR brunch d855
+-- Pick d852 or d855 userdebug
+$ lunch
+$ make -j5
 ```
 
 ```
