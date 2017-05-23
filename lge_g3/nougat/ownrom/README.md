@@ -50,19 +50,11 @@ $ repo sync -j5 --force-sync
 ### Step Four: Build
 
 ```
--- Load build tools:
-$ . build/envsetup.sh
--- Fix heap error
-$ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
-$ ./prebuilts/sdk/tools/jack-admin kill-server
-$ ./prebuilts/sdk/tools/jack-admin start-server
--- Build for your device (this can take time depending on the speed of your computer):
--- Pick d852 or d855 userdebug
-$ lunch
-$ make -j5
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/build.sh
+$ ./build.sh
 ```
 
 ```
 -- Between builds:
-$ make clobber
+$ make clean
 ```
