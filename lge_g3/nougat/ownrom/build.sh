@@ -6,13 +6,12 @@
 # | |  | \ \ /\ / / '_ \|  _  /| |  | | |\/| |
 # | |__| |\ V  V /| | | | | \ \| |__| | |  | |
 #  \____/  \_/\_/ |_| |_|_|  \_\\____/|_|  |_|
-# VERSION="v0.6.0"
+# VERSION="v0.7.0"
 
-echo "Setting up..."
-export I_WANT_A_QUAIL_STAR=true
 export OWNROM_BUILDTYPE=OFFICIAL
 . build/envsetup.sh
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin start-server
 lunch ownrom_d852-userdebug
-echo "Starting build..."
-make -j5
-echo "Done"
+make update-api && make ownrom -j5
