@@ -75,9 +75,8 @@ fi
 
 echo "Building"
 cd ownrom
-rm ota_conf_*
-wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ota_conf_$DEVICENAME
-mv ota_conf_$DEVICENAME ota_conf
+rm ota_conf
+wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ota_conf
 export OWNROM_BUILDTYPE=OFFICIAL
 . build/envsetup.sh
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
