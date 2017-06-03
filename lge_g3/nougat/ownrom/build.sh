@@ -75,6 +75,7 @@ fi
 
 echo "Building"
 cd ownrom
+rm ota_conf_*
 wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ota_conf_$DEVICENAME
 mv ota_conf_$DEVICENAME ota_conf
 export OWNROM_BUILDTYPE=OFFICIAL
