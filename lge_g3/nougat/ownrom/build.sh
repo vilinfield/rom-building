@@ -6,7 +6,7 @@
 # | |  | \ \ /\ / / '_ \|  _  /| |  | | |\/| |
 # | |__| |\ V  V /| | | | | \ \| |__| | |  | |
 #  \____/  \_/\_/ |_| |_|_|  \_\\____/|_|  |_|
-# VERSION="v0.8.0"
+# VERSION="v0.9.0"
 
 echo "Do you need to setup this install? [y or n]"
 read SETUP
@@ -61,7 +61,7 @@ echo "What is your device code?"
 read DEVICENAME
 echo "Building for" $DEVICENAME
 
-echo "Do you need to make a clean build?"
+echo "Do you need to make a clean build? [y or n]"
 read CLEAN
 
 if [ $CLEAN == "y" ]
@@ -75,6 +75,8 @@ fi
 
 echo "Building"
 cd ownrom
+wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ota_conf_$DEVICENAME
+mv ota_conf_$DEVICENAME ota_conf
 export OWNROM_BUILDTYPE=OFFICIAL
 . build/envsetup.sh
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
@@ -82,4 +84,3 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 ./prebuilts/sdk/tools/jack-admin start-server
 lunch ownrom_$DEVICENAME-userdebug
 make update-api && make ownrom -j5
-cd $OUT
