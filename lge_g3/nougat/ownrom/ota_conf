@@ -7,7 +7,7 @@
 # * Multiple devices can be added in the xml file
 # * You can define any tags that end with 'Url'. These tags will be added in the UI automatically 
 #
-ota_url=https://raw.githubusercontent.com/OwnROM-Devices/OTA/own-n/d852.xml
+ota_url=https://raw.githubusercontent.com/OwnROM-Devices/OTA/own-n/vilinfield.xml
 release_type=Stable
 device_name=ro.ownrom.updater.device
 
