@@ -37,7 +37,7 @@ then
   cd .repo
   mkdir local_manifests
   cd local_manifests
-  wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ownrom.xml
+  wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ownrom.xml
   cd ../..
 else
   echo "Skipping init."
@@ -76,7 +76,7 @@ fi
 echo "Building"
 cd ownrom
 rm ota_conf
-wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/ota_conf
+wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ota_conf
 export OWNROM_BUILDTYPE=OFFICIAL
 . build/envsetup.sh
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"

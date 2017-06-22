@@ -1,4 +1,4 @@
-# Build OwnROM for the Lge G3 (d855 + d852)
+# Build OwnROM for the Lge G3 (d855 + d852) oe Nexus 4 (mako)
 
 ## Notes
 
@@ -9,7 +9,7 @@
 -- Download the script and follow the instructions
 
 ```
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/lge_g3/nougat/ownrom/build.sh
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/build.sh
 $ chmod +x build.sh
 $ ./build.sh
 ```

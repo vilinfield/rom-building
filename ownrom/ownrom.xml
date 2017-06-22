@@ -9,13 +9,16 @@
 <!-- Lge G3 Device Files (d855 + d852) -->
 <project path="device/lge/d855" name="android_device_lge_d855" remote="vilinfield" />
 <project path="device/lge/d852" name="android_device_lge_d852" remote="vilinfield" />
+<project path="device/lge/mako" name="android_device_lge_mako" remote="vilinfield" />
 <project path="device/lge/g3-common" name="android_device_lge_g3-common" remote="vilinfield" />
 <project path="kernel/lge/g3" name="android_kernel_lge_g3" remote="lineage" />
+<project path="kernel/lge/mako" name="lge-kernel-mako" remote="lineage" />
 <project path="vendor/lge" name="proprietary_vendor_lge" remote="muppets" />
 
 <!-- Other needed files -->
 <project path="device/qcom/common" name="android_device_qcom_common" remote="lineage" />
 <project path="packages/apps/FlipFlap" name="android_packages_apps_FlipFlap" remote="lineage" />
 <project path="packages/resources/devicesettings" name="android_packages_resources_devicesettings" remote="lineage" />
+<project path="external/stlport" name="android_external_stlport" remote="lineage" />
   
 </manifest>
