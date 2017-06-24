@@ -6,16 +6,16 @@
 # | |  | \ \ /\ / / '_ \|  _  /| |  | | |\/| |
 # | |__| |\ V  V /| | | | | \ \| |__| | |  | |
 #  \____/  \_/\_/ |_| |_|_|  \_\\____/|_|  |_|
-# VERSION="v0.9.0"
+# VERSION="v0.9.1"
 
-echo "Do you need to setup this install? [y or n]"
+echo "Do you need to setup the ROM development files? [y or n]"
 read SETUP
 
 if [ $SETUP == "y" ]
 then
   sudo apt update
   sudo apt upgrade
-  sudo apt-get install git-core ninja-build gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 lzop maven pngcrush schedtool lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev squashfs-tools openjdk-8-jre openjdk-8-jdk
+  sudo apt-get install git-core ninja-build gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip gnupg gperf libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libwxgtk2.8-dev libxml2 lzop maven pngcrush schedtool lib32ncurses5-dev lib32readline-gplv2-dev lib32z1-dev squashfs-tools openjdk-8-jre openjdk-8-jdk bc
   mkdir ~/bin
   PATH=~/bin:$PATH
   curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
@@ -27,7 +27,7 @@ else
   echo "Skipping setup"
 fi
 
-echo "Do you need to init. the sources? [y or n]"
+echo "Do you need to initialize the OwnROM sources? [y or n]"
 read SOURCE
 
 if [ $SOURCE == "y" ]
@@ -40,10 +40,10 @@ then
   wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ownrom.xml
   cd ../..
 else
-  echo "Skipping init."
+  echo "Skipping initialization"
 fi
 
-echo "Do you need to sync the sources? [y or n]"
+echo "Do you need to sync the OwnROM sources? [y or n]"
 read SYNC
 
 if [ $SYNC == "y" ]
@@ -55,9 +55,7 @@ else
   echo "Skipping sync"
 fi
 
-echo "Starting to build"
-
-echo "What is your device code?"
+echo "What is your device code? [ex: d852]"
 read DEVICENAME
 echo "Building for" $DEVICENAME
 
@@ -68,6 +66,7 @@ if [ $CLEAN == "y" ]
 then
   cd ownrom
   make clean
+  make update-api
   cd ..
 else
   echo "Making dirty build"
@@ -83,4 +82,4 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 ./prebuilts/sdk/tools/jack-admin kill-server
 ./prebuilts/sdk/tools/jack-admin start-server
 lunch ownrom_$DEVICENAME-userdebug
-make update-api && make ownrom -j5
+make ownrom -j5
