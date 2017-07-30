@@ -6,7 +6,7 @@
 <remote name="muppets" fetch="https://github.com/TheMuppets/" revision="refs/heads/cm-14.1" />
 <remote name="lineage" fetch="https://github.com/LineageOS/" revision="refs/heads/cm-14.1" />
 
-<!-- Lge G3 Device Files (d855 + d852) -->
+<!-- Lge G3 and Nexus 4 Device Files (d855 + d852 + mako) -->
 <project path="device/lge/d855" name="android_device_lge_d855" remote="vilinfield" />
 <project path="device/lge/d852" name="android_device_lge_d852" remote="vilinfield" />
 <project path="device/lge/mako" name="android_device_lge_mako" remote="vilinfield" />

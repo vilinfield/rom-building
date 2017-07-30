@@ -6,7 +6,7 @@
 # | |  | \ \ /\ / / '_ \|  _  /| |  | | |\/| |
 # | |__| |\ V  V /| | | | | \ \| |__| | |  | |
 #  \____/  \_/\_/ |_| |_|_|  \_\\____/|_|  |_|
-# VERSION="v0.9.1"
+# VERSION="v0.9.2"
 
 echo "Do you need to setup the ROM development files? [y or n]"
 read SETUP
@@ -21,8 +21,12 @@ then
   curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
   chmod a+x ~/bin/repo
   mkdir ~/ownrom
-  git config --global user.name "vilinfield"
-  git config --global user.email "vilinfield@gmail.com"
+  echo "Whats your git username?"
+  read GITUSERNAME
+  git config --global user.name $GITUSERNAME
+  echo "Whats your git email?"
+  read GITEMAIL
+  git config --global user.email $GITEMAIL
 else
   echo "Skipping setup"
 fi
@@ -34,13 +38,25 @@ if [ $SOURCE == "y" ]
 then
   cd ownrom
   repo init -u git://github.com/OwnROM/android -b own-n
+  cd ..
+else
+  echo "Skipping initialization"
+fi
+
+echo "Are you building for the LG G3 or Google Nexus 4? [y or n]"
+read LGNEXUS
+
+if [ $LGNEXUS == "y" ]
+then
+  cd ownrom
   cd .repo
   mkdir local_manifests
   cd local_manifests
+  rm ownrom.xml
   wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ownrom.xml
   cd ../..
 else
-  echo "Skipping initialization"
+  echo "Building for other device"
 fi
 
 echo "Do you need to sync the OwnROM sources? [y or n]"
@@ -66,17 +82,46 @@ if [ $CLEAN == "y" ]
 then
   cd ownrom
   make clean
-  make update-api
   cd ..
 else
   echo "Making dirty build"
 fi
 
-echo "Building"
+echo "Do you need to update the apis? - Used to fix quailstar issue if it occurs [y or n]"
+read APIUPDATE
+
+if [ $APIUPDATE == "y" ]
+then
+  cd ownrom
+  make update-api 
+  cd ..
+else
+  echo "Skipping api update"
+fi
+
+echo "Is this an offical build? [y or n]"
+read APIUPDATE
+
+if [ $APIUPDATE == "y" ]
+then
+  cd ownrom
+  export OWNROM_BUILDTYPE=OFFICIAL
+  echo "Will make OFFICAL build"
+  cd ..
+else
+  echo "Will make UNOFFICAL build"
+fi
+
+echo "Starting build... Press enter to continue"
+read DOIT
 cd ownrom
-rm ota_conf
-wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ota_conf
-export OWNROM_BUILDTYPE=OFFICIAL
+if [ $LGNEXUS == "y" ]
+then
+  rm ota_conf
+  wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ota_conf
+else
+  echo ""
+fi
 . build/envsetup.sh
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 ./prebuilts/sdk/tools/jack-admin kill-server

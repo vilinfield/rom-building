@@ -1,7 +1,21 @@
-# Build custom ROM's
+# OwnROM setup and build script
 
-## OwnROM
-- Readme here: [https://github.com/vilinfield/rom-building/blob/master/ownrom/README.md](https://github.com/vilinfield/rom-building/blob/master/ownrom/README.md)
+* NOTE: This is assuming you are running a Debian or Debian based operating system such as Ubuntu, Linux Mint, etc.
 
-## Asus Zenfone 2 (Multiple ROM's)
-- Readme for ROM's here: [https://github.com/vilinfield/rom-building/blob/master/asus_zenfone_2/README.md](https://github.com/vilinfield/rom-building/blob/master/asus_zenfone_2/README.md)
+## How to use:
+
+* Download the script and follow the on screen instructions
+
+```
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/build.sh
+$ chmod +x build.sh
+$ ./build.sh
+```
+
+## OLD:
+
+* These are READMES and manifests that showed people how to build certain ROM's for the Asus Zenfone 2. These however are no longer supported.
+
+## License:
+
+* MIT
