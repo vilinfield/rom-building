@@ -14,12 +14,12 @@ $ ./build.sh
 
 ## OLD:
 
-* These are READMES and manifests that showed people how to build certain ROM's for the Asus Zenfone 2. These however are no longer supported.
+* These are guides and manifests that showed people how to build certain ROM's for the Asus Zenfone 2. These are no longer supported.
 
 ## old.sh:
 
-* Old build script used for OwnROM marshmallow. This is also no longer supported.
+* Old build script used for OwnROM marshmallow. This is no longer supported.
 
 ## License:
 
-* MIT
+* Available under the MIT license

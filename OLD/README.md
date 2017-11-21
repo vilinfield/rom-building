@@ -1,6 +1,6 @@
 # Build custom ROM's for the Asus Zenfone 2 (Z00A + Z008)
 
-All no longer supported - build guides may no longer work
+Everything here is no longer supported - build guides and manifests may no longer work
 
 ## Dirty Unicrons Marshmallow
 
