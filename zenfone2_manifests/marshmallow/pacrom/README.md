@@ -1,8 +1,8 @@
-# Build Dirty Unicorns for the Asus Zenfone 2 (Z00A + Z008)
+# Build PAC-ROM marshmallow for the Asus Zenfone 2 (Z00A + Z008)
 
 ## Notes
 
--- This guide is assuming you are running a Debian or Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
+-- This guide is assuming you are running Debian or a Debian based operating system such as Ubuntu.
 
 ### Step One: Set up your environment 
 
@@ -24,9 +24,9 @@ $ mkdir ~/bin
 $ PATH=~/bin:$PATH
 $ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 $ chmod a+x ~/bin/repo
--- Make a folder to store the ROM's source code (du can be replaced with whatever you want):
-$ mkdir ~/du 
-$ cd ~/du
+-- Make a folder to store the ROM's source code (pac can be replaced with whatever you want):
+$ mkdir ~/pac 
+$ cd ~/pac
 -- Configure Git:
 $ git config --global user.name "Your Name"
 $ git config --global user.email "you@example.com"
@@ -36,46 +36,38 @@ $ git config --global user.email "you@example.com"
 
 ```
 -- Get the source initialized:
-$ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
--- Download the local manifests (these are some changes to the code as well as a few of my own repos to get Dirty Unicorns to build):
+$ repo init -u https://github.com/PAC-ROM/pac-rom.git -b pac-6.0 -g all,-notdefault,-darwin
+-- Download the local manifests (these are some changes to the code as well as a few of my own repos to get PAC-ROM to build):
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/marshmallow/du/du.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/pacrom/pacrom.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync
 ```
 
-### Step Four: Add needed code
+### Step Four: Change some code
 
 ```
--- Fix snap camera build error
-$ nano packages/apps/Snap/src/com/android/camera/CameraActivity.java
-
-- Delete lines 1825-1831 shown below
-
-        if (mPowerShutter && mInCameraApp) {
-             getWindow().addPrivateFlags(
-                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
-         } else {
-             getWindow().clearPrivateFlags(
-                     WindowManager.LayoutParams.PRIVATE_FLAG_PREVENT_POWER_KEY);
-         }
+-- Swap dependencies files
+$ cd vendor/pac/dependencies
+$ rm Z008.dependencies
+$ rm Z00A.dependencies
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/pacrom/Z008.dependencies
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/pacrom/Z00A.dependencies
+cd ../..
 ```
 
 ### Step Five: Build
 
 ```
--- Load build tools:
-$ . build/envsetup.sh
 -- Build for your device (this can take time depending on the speed of your computer):
-$ brunch Z00A
-- OR brunch Z008
+$ ./build-pac.sh Z00A
+- OR ./build-pac.sh Z008
 ```
 
 ```
 -- Between builds:
 $ make clobber
-$ . build/envsetup.sh
 ```

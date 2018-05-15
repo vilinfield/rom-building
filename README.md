@@ -1,24 +1,16 @@
-# OwnROM setup and build script
+# Android ROM Building Scripts and Manifests
 
-* NOTE: This is assuming you are running a Debian or Debian based operating system such as Ubuntu, Linux Mint, etc.
+## ownrom_marshmallow:
 
-## How to use:
+* Old build and setup script used for OwnROM marshmallow. This is no longer maintained and is not recommended to use.
 
-* Download the script and follow the on screen instructions
+## ownrom_nougat:
 
-```
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/build.sh
-$ chmod +x build.sh
-$ ./build.sh
-```
+* Old build and setup script used for OwnROM nougat. This is no longer maintained.
 
-## OLD:
+## zenfone2_manifests:
 
-* These are guides and manifests that showed people how to build certain ROM's for the Asus Zenfone 2. These are no longer supported.
-
-## old.sh:
-
-* Old build script used for OwnROM marshmallow. This is no longer supported.
+* These are build guides and manifests to build various custom Android ROM's for the Asus Zenfone 2. These are no longer maintained.
 
 ## License:
 

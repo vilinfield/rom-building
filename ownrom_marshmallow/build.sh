@@ -1,5 +1,6 @@
-#!/bin/bash
-#OWNROM SETUP AND BUILD SCRIPT
+#!/usr/bin/env bash
+#OWNROM MARSHMALLOW SETUP AND BUILD SCRIPT
+#NOT RECOMMENDED TO USE
 #   ____                 _____   ____  __  __ 
 #  / __ \               |  __ \ / __ \|  \/  |
 # | |  | |_      ___ __ | |__) | |  | | \  / |
@@ -7,7 +8,7 @@
 # | |__| |\ V  V /| | | | | \ \| |__| | |  | |
 #  \____/  \_/\_/ |_| |_|_|  \_\\____/|_|  |_|
 #GITHUB: https://github.com/OwnROM/Setup.sh
-VERSION="v0.5.7"
+VERSION="v0.5.8"
 
 #=====FUNCTIONS=====#
 #PAUSE COMMAND
@@ -239,7 +240,7 @@ echo "Syncing OwnROM sources"
 waitf
 cp $SOURCEDIR/vendor/ownrom/tools/sync-own.sh $SOURCEDIR/sync-own.sh
 iserror
-cd $SOURCEDIR
+cd "$SOURCEDIR"
 bash sync-own.sh
 iserror
 waitf
@@ -256,7 +257,7 @@ waitf
 if [ "$SYNCIT" = "y" ]
 then
 echo "Starting full sync"
-cd $SOURCEDIR
+cd "$SOURCEDIR"
 repo sync -j$SYNCJOBS
 iserror
 echo "Fullsync has completed"
@@ -339,31 +340,31 @@ waitf
 ##REQUIRED DEPENDENCIES
 dependenciesf(){
 echo "Installing required dependencies"
-if [ "$PACKAGEMANAGER" = "apt-get"]
+if [ "$PACKAGEMANAGER" = "apt-get" ]
 then
 waitf
 sudo apt-get update && sudo apt-get -y install git-core python gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev gcc-multilib liblz4-* pngquant ncurses-dev texinfo gcc gperf patch libtool automake g++ gawk subversion expat libexpat1-dev python-all-dev binutils-static libgcc1:i386 bc libcloog-isl-dev libcap-dev autoconf libgmp-dev build-essential gcc-multilib g++-multilib pkg-config libmpc-dev libmpfr-dev lzma* liblzma* w3m phablet-tools android-tools-adb screen maven tmux 
 iserror
 waitf
-elif [ "$PACKAGEMANAGER" = "aptitude"]
+elif [ "$PACKAGEMANAGER" = "aptitude" ]
 then
 waitf
 sudo aptitude update && sudo aptitude install git-core python gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev gcc-multilib liblz4-* pngquant ncurses-dev texinfo gcc gperf patch libtool automake g++ gawk subversion expat libexpat1-dev python-all-dev binutils-static libgcc1:i386 bc libcloog-isl-dev libcap-dev autoconf libgmp-dev build-essential gcc-multilib g++-multilib pkg-config libmpc-dev libmpfr-dev lzma* liblzma* w3m phablet-tools android-tools-adb screen maven tmux 
 iserror
 waitf
-elif [ "$PACKAGEMANAGER" = "yum"]
+elif [ "$PACKAGEMANAGER" = "yum" ]
 then
 waitf
 sudo yum update && sudo yum install glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686 gcc gcc-c++ gperf flex bison glibc-devel.{x86_64,i686} zlib-devel.{x86_64,i686} ncurses-devel.i686 libsx-devel readline-devel.i686 perl-Switch java-1.7.0-openjdk maven
 iserror
 waitf
-elif [ "$PACKAGEMANAGER" = "dnf"]
+elif [ "$PACKAGEMANAGER" = "dnf" ]
 then
 waitf
 sudo dnf update && sudo dnf install glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686 gcc gcc-c++ gperf flex bison glibc-devel.{x86_64,i686} zlib-devel.{x86_64,i686} ncurses-devel.i686 libsx-devel readline-devel.i686 perl-Switch java-1.7.0-openjdk maven
 iserror
 waitf
-elif [ "$PACKAGEMANAGER" = "pacman"]
+elif [ "$PACKAGEMANAGER" = "pacman" ]
 then
 waitf
 sudo pacman -Sy && sudo pacman -S gcc git gnupg flex bison gperf sdl wxgtk squashfs-tools curl ncurses zlib schedtool perl-switch zip unzip libxslt python2-virtualenv bc gcc-multilib lib32-zlib lib32-ncurses lib32-readline rsync maven jdk7-openjdk
@@ -420,8 +421,8 @@ echo "Initializing source code"
 waitf
 echo "Initializing OwnROM Source at $SOURCEDIR"
 waitf
-mkdir -p $SOURCEDIR
-cd $SOURCEDIR
+mkdir -p "$SOURCEDIR"
+cd "$SOURCEDIR"
 repo init -u https://github.com/OwnROM/android -b own-mm
 iserror
 waitf
@@ -446,7 +447,7 @@ echo "Setup CCache"
 waitf
 echo "export USE_CCACHE=1" | tee -a ~/.bashrc
 echo "export CCACHE_DIR=$CCACHEDIR" | tee -a ~/.bashrc
-prebuilts/misc/linux-x86/ccache/ccache -M $CCACHESIZE
+prebuilts/misc/linux-x86/ccache/ccache -M "$CCACHESIZE"
 waitf
 echo "CCache has been setup"
 waitf

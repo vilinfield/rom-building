@@ -1,8 +1,8 @@
-# Build Cyanognemod with MM blobs (For marshmallow bootloader) for the Asus Zenfone 2 (Z00A + Z008)
+# Build Cyanognemod with MM blobs for the Asus Zenfone 2 (Z00A + Z008) with the marshmallow bootloader
 
 ## Notes
 
--- This guide is assuming you are running a Debian or Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
+-- This guide is assuming you are running Debian or a Debian based operating system such as Ubuntu.
 
 ### Step One: Set up your environment 
 
@@ -41,7 +41,7 @@ $ repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/marshmallow/cm-mmblobs/cm-mmblobs.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/cm-mmblobs/cm-mmblobs.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync

@@ -1,17 +1,17 @@
-#!/bin/bash
-# OWNROM SETUP AND BUILD SCRIPT
+#!/usr/bin/env bash
+# OWNROM NOUGAT SETUP AND BUILD SCRIPT
 #   ____                 _____   ____  __  __
 #  / __ \               |  __ \ / __ \|  \/  |
 # | |  | |_      ___ __ | |__) | |  | | \  / |
 # | |  | \ \ /\ / / '_ \|  _  /| |  | | |\/| |
 # | |__| |\ V  V /| | | | | \ \| |__| | |  | |
 #  \____/  \_/\_/ |_| |_|_|  \_\\____/|_|  |_|
-# VERSION="v0.9.2"
+# VERSION="v0.9.3"
 
 echo "Do you need to setup the ROM development files? [y or n]"
-read SETUP
+read -r SETUP
 
-if [ $SETUP == "y" ]
+if [ "$SETUP" == "y" ]
 then
   sudo apt update
   sudo apt upgrade
@@ -22,19 +22,19 @@ then
   chmod a+x ~/bin/repo
   mkdir ~/ownrom
   echo "Whats your git username?"
-  read GITUSERNAME
-  git config --global user.name $GITUSERNAME
+  read -r GITUSERNAME
+  git config --global user.name "$GITUSERNAME"
   echo "Whats your git email?"
-  read GITEMAIL
-  git config --global user.email $GITEMAIL
+  read -r GITEMAIL
+  git config --global user.email "$GITEMAIL"
 else
   echo "Skipping setup"
 fi
 
 echo "Do you need to initialize the OwnROM sources? [y or n]"
-read SOURCE
+read -r SOURCE
 
-if [ $SOURCE == "y" ]
+if [ "$SOURCE" == "y" ]
 then
   cd ownrom
   repo init -u git://github.com/OwnROM/android -b own-n
@@ -44,9 +44,9 @@ else
 fi
 
 echo "Are you building for the LG G3 or Google Nexus 4? [y or n]"
-read LGNEXUS
+read -r LGNEXUS
 
-if [ $LGNEXUS == "y" ]
+if [ "$LGNEXUS" == "y" ]
 then
   cd ownrom
   cd .repo
@@ -60,9 +60,9 @@ else
 fi
 
 echo "Do you need to sync the OwnROM sources? [y or n]"
-read SYNC
+read -r SYNC
 
-if [ $SYNC == "y" ]
+if [ "$SYNC" == "y" ]
 then
   cd ownrom
   repo sync -j5 --force-sync
@@ -72,13 +72,13 @@ else
 fi
 
 echo "What is your device code? [ex: d852]"
-read DEVICENAME
-echo "Building for" $DEVICENAME
+read -r DEVICENAME
+echo "Building for" "$DEVICENAME"
 
 echo "Do you need to make a clean build? [y or n]"
-read CLEAN
+read -r CLEAN
 
-if [ $CLEAN == "y" ]
+if [ "$CLEAN" == "y" ]
 then
   cd ownrom
   make clean
@@ -88,9 +88,9 @@ else
 fi
 
 echo "Do you need to update the apis? - Used to fix quailstar issue if it occurs [y or n]"
-read APIUPDATE
+read -r APIUPDATE
 
-if [ $APIUPDATE == "y" ]
+if [ "$APIUPDATE" == "y" ]
 then
   cd ownrom
   make update-api 
@@ -99,10 +99,10 @@ else
   echo "Skipping api update"
 fi
 
-echo "Is this an offical build? [y or n]"
-read APIUPDATE
+echo "Is this an official build? [y or n]"
+read -r APIUPDATE
 
-if [ $APIUPDATE == "y" ]
+if [ "$APIUPDATE" == "y" ]
 then
   cd ownrom
   export OWNROM_BUILDTYPE=OFFICIAL
@@ -113,9 +113,9 @@ else
 fi
 
 echo "Starting build... Press enter to continue"
-read DOIT
+read -r DOIT
 cd ownrom
-if [ $LGNEXUS == "y" ]
+if [ "$LGNEXUS" == "y" ]
 then
   rm ota_conf
   wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ota_conf
@@ -126,5 +126,5 @@ fi
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 ./prebuilts/sdk/tools/jack-admin kill-server
 ./prebuilts/sdk/tools/jack-admin start-server
-lunch ownrom_$DEVICENAME-userdebug
+lunch ownrom_"$DEVICENAME"-userdebug
 make ownrom -j5

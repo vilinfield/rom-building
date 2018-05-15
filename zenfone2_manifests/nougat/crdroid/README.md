@@ -2,9 +2,9 @@
 
 ## Notes
 
--- This guide is assuming you are running a Debian or Debian based operating system. (Debian, Ubuntu, Linux Mint, Etc.)
+-- This guide is assuming you are running Debian or a Debian based operating system such as Ubuntu.
 
--- Crdroid wont boot currently
+-- This ROM wont boot at its current state
 
 ### Step One: Set up your environment 
 
@@ -43,7 +43,7 @@ $ repo init -u https://github.com/crdroidandroid/android -b 7.1
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/nougat/crdroid/crdroid.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/nougat/crdroid/crdroid.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 
