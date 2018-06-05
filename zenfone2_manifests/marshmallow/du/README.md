@@ -41,7 +41,7 @@ $ repo init -u http://github.com/DirtyUnicorns/android_manifest.git -b m-caf
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/du/du.xml
+$ wget https://gitlab.com/vilinfield/rom-building/raw/master/zenfone2_manifests/marshmallow/du/du.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync
