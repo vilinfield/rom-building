@@ -2,12 +2,12 @@
 
 NOTE: This script assumes you are running Debian or a Debian based operating system such as Ubuntu. 
 
-## How to use:
+## How to use
 
 Download the script and follow the on screen instructions
 
 ```
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/ownrom_marshmallow/build.sh
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom_marshmallow/build.sh
 $ chmod +x build.sh
 $ ./build.sh
 ```

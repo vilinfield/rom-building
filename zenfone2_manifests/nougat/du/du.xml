@@ -5,7 +5,7 @@
 <!-- Remotes -->
 <remote name="cm" fetch="https://github.com/LineageOS/" revision="refs/heads/cm-14.1" />
 <remote name="jason" fetch="https://github.com/jrior001/" revision="refs/heads/cm-14.1" />
-<remote name="vilinfield" fetch="https://gitlab.com/vilinfield/" revision="refs/heads/du-n7x" />
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/du-n7x" />
 
 <!-- Removed Repos -->
 <remove-project name="platform/hardware/intel/common/libmix" />

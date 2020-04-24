@@ -53,7 +53,7 @@ then
   mkdir local_manifests
   cd local_manifests
   rm ownrom.xml
-  wget https://gitlab.com/vilinfield/rom-building/raw/master/ownrom_nougat/ownrom.xml
+  wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ownrom.xml
   cd ../..
 else
   echo "Building for other device"
@@ -118,7 +118,7 @@ cd ownrom
 if [ "$LGNEXUS" == "y" ]
 then
   rm ota_conf
-  wget https://gitlab.com/vilinfield/rom-building/raw/master/ownrom_nougat/ota_conf
+  wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom/ota_conf
 else
   echo ""
 fi

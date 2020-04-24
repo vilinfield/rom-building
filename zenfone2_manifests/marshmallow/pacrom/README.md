@@ -41,7 +41,7 @@ $ repo init -u https://github.com/PAC-ROM/pac-rom.git -b pac-6.0 -g all,-notdefa
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/zenfone2_manifests/marshmallow/pacrom/pacrom.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/pacrom/pacrom.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync
@@ -54,8 +54,8 @@ $ repo sync -j4 --force-sync
 $ cd vendor/pac/dependencies
 $ rm Z008.dependencies
 $ rm Z00A.dependencies
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/zenfone2_manifests/marshmallow/pacrom/Z008.dependencies
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/zenfone2_manifests/marshmallow/pacrom/Z00A.dependencies
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/pacrom/Z008.dependencies
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/pacrom/Z00A.dependencies
 cd ../..
 ```
 

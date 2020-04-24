@@ -41,7 +41,7 @@ $ repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/zenfone2_manifests/marshmallow/cm-mmblobs/cm-mmblobs.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/marshmallow/cm-mmblobs/cm-mmblobs.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 --force-sync

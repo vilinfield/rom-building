@@ -2,7 +2,7 @@
 <manifest>
 
 <!-- Remotes -->
-<remote name="vilinfield" fetch="https://gitlab.com/vilinfield/" revision="refs/heads/own-n" />
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/own-n" />
 <remote name="muppets" fetch="https://github.com/TheMuppets/" revision="refs/heads/cm-14.1" />
 <remote name="lineage" fetch="https://github.com/LineageOS/" revision="refs/heads/cm-14.1" />
 

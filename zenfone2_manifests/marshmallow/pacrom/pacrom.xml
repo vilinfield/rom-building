@@ -2,7 +2,7 @@
 <manifest>
 
 <!-- Remotes -->
-<remote name="vilinfield" fetch="https://gitlab.com/vilinfield/" revision="refs/heads/pac-mm" />
+<remote name="vilinfield" fetch="https://github.com/vilinfield/" revision="refs/heads/pac-mm" />
 <remote name="jrior001-vendor" fetch="https://github.com/jrior001/" revision="refs/heads/zf2_Mrebase" />
 <remote name="jrior001-kernel" fetch="https://github.com/jrior001/" revision="refs/heads/M-rebase" />
 

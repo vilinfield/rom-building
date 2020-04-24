@@ -7,7 +7,7 @@ NOTE: This script assumes you are running Debian or a Debian based operating sys
 Download the script and follow the on screen instructions
 
 ```
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/ownrom_nougat/build.sh
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/ownrom_nougat/build.sh
 $ chmod +x build.sh
 $ ./build.sh
 ```

@@ -43,7 +43,7 @@ $ repo init -u https://github.com/crdroidandroid/android -b 7.1
 $ cd .repo
 $ mkdir local_manifests
 $ cd local_manifests/
-$ wget https://gitlab.com/vilinfield/rom-building/raw/master/zenfone2_manifests/nougat/crdroid/crdroid.xml
+$ wget https://raw.githubusercontent.com/vilinfield/rom-building/master/zenfone2_manifests/nougat/crdroid/crdroid.xml
 $ cd ../..
 -- Download the source (this can take a while depending on internet speed):
 $ repo sync -j4 
